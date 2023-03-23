@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,500;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&family=Sen:wght@400;700;800&display=swap');
+
+:root {
+  --light: #F1F6F9;
+  --light-blue: #d7e8f2c4;
+  --light-gray: #9BA4B4;
+  --white: #fff;
+  --gray: #394867;
+  --dark: #14274e;
+
+  --z-idx-10: 10;
+  --z-idx-20: 20;
+  --z-idx-30: 30;
+  --z-idx-40: 40;
+  --z-idx-50: 50;
+
+  --box-shadow-dark-1: 0 0 1rem rgb(20, 39, 78, 0.1);
+  --box-shadow-dark-2: 0 0 1rem rgb(20, 39, 78, 0.2);
+  --box-shadow-dark-3: 0 0 1rem rgb(20, 39, 78, 0.3);
+
+  --background-transparent: rgb(20, 39, 78, .9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: none;
+  outline: none;
+  border: none;
+  transition: all .2s linear;
+  color: var(--light);
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  background-color: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: var(--z-idx-30);
+  padding: 1.5rem 7%;
+}
+
+header .logo {
+  font-size: 2.8rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+
+header .logo i {
+  color: var(--light-gray);
+}
+
+header .navbar a {
+  font-size: 1.8rem;
+  padding: .5rem 1rem;
+  margin-left: .5rem;
+  font-weight: 600;
+  border-radius: .5rem;
+  text-transform: capitalize;
+}
+
+header .navbar a.active,
+header .navbar a:hover {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+header .icons i {
+  width: 3.6rem;
+  height: 3.6rem;
+  font-size: 1.6rem;
+  line-height: 3.6rem;
+  background-color: var(--gray);
+  border-radius: 50%;
+  text-align: center;
+  margin-left: .5rem;
+  cursor: pointer;
+}
+
+header .icons i:hover {
+  background-color: var(--light);
+  color: var(--dark);
+  transform: rotate(360deg);
+}
+
+header .icons i#logout,
+header .icons i#menu-bars {
+  display: none;
+}
+
+main {
+  padding-top: 7rem;
+}
+
+section {
+  padding: 2rem 9%;
+  color: var(--dark);
+  font-size: 1.6rem;
+}
+
+section p {
+  color: var(--gray);
+}
+
+footer {
+  background-color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+footer i,
+footer h4 {
+  font-size: 1.4rem;
+  padding: 0 .3rem;
+}
+
+/* ============ login page ============= */
+
+.login-page {
+  position: fixed;
+  left: 0;
+  top: -110%;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-idx-40);
+  background-color: var(--background-transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-page.active {
+  top: 0;
+}
+
+.login-page .wrapper {
+  width: 28rem;
+  background-color: #394867;
+  padding: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.login-page .wrapper .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .7rem;
+}
+
+.login-page .wrapper .title h2 {
+  text-transform: capitalize;
+  font-size: 2.8rem;
+}
+
+.login-page .wrapper .title i {
+  color: var(--light-gray);
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.login-page .wrapper input {
+  color: var(--gray);
+  font-size: 2rem;
+  padding: .5rem 1rem;
+  border-radius: .3rem;
+  background-color: var(--light);
+}
+
+.login-page .wrapper input::placeholder {
+  color: var(--light-gray);
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}
+
+.login-page .wrapper .btns-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: .7rem;
+}
+
+.login-page .wrapper .btns-container .btn {
+  color: var(--light-gray);
+  background-color: var(--dark);
+  padding: 1rem 2rem;
+  border-radius: .5rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-page .wrapper .btns-container .btn:hover {
+  color: var(--white);
+  filter: brightness(.8);
+}
+
+/* ============ common resources ============= */
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.page-title h2 {
+  color: var(--gray);
+  text-transform: capitalize;
+}
+
+.page-title i {
+  color: var(--gray);
+  font-size: 2rem;
+  text-align: center;
+}
+
+/* =========== vocabulary ============== */
+.vocabulary .top-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vocabulary .search input {
+  color: var(--dark);
+  font-size: 1.8rem;
+  width: 30rem;
+  padding: .5rem 0;
+  border-bottom: .1rem solid var(--light-gray);
+  background: none;
+  text-transform: none;
+}
+
+.vocabulary .search input::placeholder {
+  color: var(--light-gray);
+  font-size: 1.8rem;
+}
+
+.vocabulary .search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.vocabulary .search label {
+  color: var(--gray);
+  font-size: 2rem;
+}
+
+/* ======= cards ======= */
+
+.cards-list {
+  margin: 3rem 0;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: var(--light);
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 28rem;
+  flex: 1;
+  cursor: pointer;
+}
+
+.card h3 {
+  color: var(--gray);
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  letter-spacing: .1rem;
+  text-transform: capitalize;
+}
+
+.card p {
+  color: var(--gray);
+  font-size: 1.9rem;
+}
+
+.card p span {
+  color: var(--light-gray);
+  text-transform: capitalize;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  margin-right: 0.5rem;
+}
+
+.card:hover {
+  box-shadow: var(--box-shadow-dark-2);
+}
+
+.card:nth-child(even) {
+  background-color: var(--light-blue);
+}
+
+.card-content {
+  width: 100%;
+  background-color: var(--light);
+  color: var(--gray);
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.card-content h3 {
+  color: var(--gray);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  letter-spacing: .1rem;
+  text-transform: capitalize;
+}
+
+.card-content .card-phrase {
+  text-align: center;
+}
+
+.card-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.definition-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.phrase-definition {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.phrase-definition span {
+  color: var(--light);
+  background-color: var(--light-gray);
+  box-shadow: var(--box-shadow-dark-3);
+  padding: 1rem;
+  border-radius: .5rem;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: .1rem;
+  min-width: 13rem;
+}
+
+.phrase-example span {
+  color: var(--gray);
+  font-weight: 500;
+  text-transform: capitalize;
+  text-decoration: underline;
+  text-underline-offset: .4rem;
+}
+
+.phrase-example ol {
+  margin: 1rem 0;
+  padding-left: 2.5rem;
+}
+
+.phrase-example ol li {
+  color: var(--gray);
+}
+
+.phrase-properties {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.property {
+  flex-basis: 30%;
+  min-width: 28rem;
+  border: .2rem solid var(--light-blue);
+  border-radius: .5rem;
+  padding: .5rem;
+  flex: 1;
+}
+
+.property span {
+  color: var(--gray);
+  font-weight: 500;
+  text-transform: capitalize;
+  background-color: var(--light-blue);
+  padding: .5rem 1rem;
+  display: inline-block;
+  border-radius: .4rem;
+}
+
+/* ======= media queries ======= */
+
+/* 
+320px — 480px: Mobile devices.
+481px — 768px: iPads, Tablets.
+769px — 1024px: Small screens, laptops.
+1025px — 1200px: Desktops, large screens.
+1201px and more — Extra large screens, TV. 
+*/
+
+@media (max-width: 992px) {
+
+  html {
+    font-size: 55%;
+  }
+
+  header {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  html {
+    font-size: 50%;
+  }
+
+  section {
+    padding: 1rem 5%;
+  }
+
+  header .icons i#menu-bars {
+    display: inline-block;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--dark);
+    border-top: .1rem solid var(--light);
+    border-bottom: .1rem solid var(--light);
+    padding: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  header .navbar a {
+    display: block;
+    padding: 1.5rem;
+    margin: 1rem;
+    font-size: 2rem;
+    background: var(--gray);
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
+
+  .card-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .phrase-definition {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+
+  footer {
+    display: none;
+  }
+
+  .page-title {
+    display: none;
+  }
+
+  .top-block .search {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 320px) {
+
+  .top-block .search label {
+    display: none;
+  }
+
+  .top-block .search input {
+    width: 90%;
+  }
+}
