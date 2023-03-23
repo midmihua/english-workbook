@@ -1,0 +1,21 @@
+{
+  "name": "english-workbook",
+  "version": "1.0.0",
+  "description": "Server API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "",
+    "test": ""
+  },
+  "keywords": [
+    "node",
+    "js",
+    "express",
+    "REST API",
+    "auth",
+    "JWT",
+    "mongodb"
+  ],
+  "author": "",
+  "license": "ISC"
+}
