@@ -1,4 +1,4 @@
-import ListCheck from '../../components/shared/icons/listCheck';
+import ListCheckIcon from '../../components/shared/icons/listCheck';
 import PageTitle from '../../components/shared/pageTitle';
 import { PAGES } from '../../constants';
 
@@ -7,7 +7,7 @@ const Practice = () => {
   return (
     <section className="practice" id="practice">
       <PageTitle
-        Icon={ListCheck}
+        Icon={ListCheckIcon}
         title={PAGES.PRACTICE.name}
       />
     </section>

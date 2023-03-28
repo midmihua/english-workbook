@@ -1,17 +1,17 @@
 import { PAGES } from '../../../../constants';
-import CommonLink from '../commonLink';
+import BaseLink from '../baseLink';
 
-const GoHome = () => {
+const GoHomeLink = () => {
 
   return (
-    <CommonLink
+    <BaseLink
       path={PAGES.HOME.url}
       label={`Go Home link`}
       classes={'button'}
     >
       {`Go Home`}
-    </CommonLink>
+    </BaseLink>
   );
 };
 
-export default GoHome;
+export default GoHomeLink;

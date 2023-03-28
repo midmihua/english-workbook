@@ -1,12 +1,14 @@
 type PageTitleProps = {
-  Icon: () => JSX.Element;
+  Icon: ({ }) => JSX.Element;
   title: string;
+  classes?: string;
 };
 
-const PageTitle = ({ Icon, title }: PageTitleProps) => {
+const PageTitle = ({ Icon, title, classes }: PageTitleProps) => {
+  const cls = classes || 'page-title';
 
   return (
-    <div className="page-title">
+    <div className={cls}>
       <Icon />
       <h2>{title}</h2>
     </div>

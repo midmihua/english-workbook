@@ -2,7 +2,7 @@ type LoginProps = {
   onClick?: React.MouseEventHandler<HTMLElement>;
 };
 
-const Login = ({ onClick }: LoginProps) => {
+const LoginIcon = ({ onClick }: LoginProps) => {
 
   return (
     <i
@@ -13,4 +13,4 @@ const Login = ({ onClick }: LoginProps) => {
   );
 };
 
-export default Login;
+export default LoginIcon;

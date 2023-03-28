@@ -1,8 +1,8 @@
-const ChartLine = () => {
+const ChartLineIcon = () => {
 
   return (
     <i className="fa-solid fa-chart-line"></i>
   );
 };
 
-export default ChartLine;
+export default ChartLineIcon;

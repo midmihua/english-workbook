@@ -1,8 +1,8 @@
-const Bug = () => {
+const BugIcon = () => {
 
   return (
     <i className="fa-solid fa-bug"></i>
   );
 };
 
-export default Bug;
+export default BugIcon;
