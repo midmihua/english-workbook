@@ -2,7 +2,7 @@ type LogoutProps = {
   onClick?: React.MouseEventHandler<HTMLElement>;
 };
 
-const Logout = ({ onClick }: LogoutProps) => {
+const LogoutIcon = ({ onClick }: LogoutProps) => {
 
   return (
     <i
@@ -13,4 +13,4 @@ const Logout = ({ onClick }: LogoutProps) => {
   );
 };
 
-export default Logout;
+export default LogoutIcon;

@@ -109,6 +109,7 @@ header {
 
 main {
   padding-top: 7rem;
+  min-height: 93vh;
 }
 
 section {
@@ -281,7 +282,7 @@ footer h4 {
   -webkit-appearance: none;
 }
 
-.vocabulary .search label {
+.vocabulary .search label i {
   color: var(--gray);
   font-size: 2rem;
 }
@@ -549,7 +550,7 @@ footer h4 {
 
 @media (max-width: 320px) {
 
-  .top-block .search label {
+  .top-block .search label i {
     display: none;
   }
 

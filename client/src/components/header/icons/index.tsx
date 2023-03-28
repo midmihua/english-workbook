@@ -1,6 +1,6 @@
-import Login from '../../shared/icons/login';
-import Logout from '../../shared/icons/logout';
-import Menu from '../../shared/icons/menu';
+import LoginIcon from '../../shared/icons/login';
+import LogoutIcon from '../../shared/icons/logout';
+import MenuIcon from '../../shared/icons/menu';
 
 type IconsProps = {
   onClickLogin?: React.MouseEventHandler<HTMLElement>;
@@ -13,9 +13,9 @@ const Icons = ({ onClickLogin, onClickLogout, onClickMenu, closeIconVisible }: I
 
   return (
     <div className="icons">
-      <Login onClick={onClickLogin} />
-      <Logout onClick={onClickLogout} />
-      <Menu
+      <LoginIcon onClick={onClickLogin} />
+      <LogoutIcon onClick={onClickLogout} />
+      <MenuIcon
         onClick={onClickMenu}
         closeIconVisible={closeIconVisible}
       />

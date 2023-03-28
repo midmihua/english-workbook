@@ -3,7 +3,7 @@ type MenuProps = {
   closeIconVisible?: boolean;
 };
 
-const Menu = ({ onClick, closeIconVisible }: MenuProps) => {
+const MenuIcon = ({ onClick, closeIconVisible }: MenuProps) => {
 
   const classes = closeIconVisible ? 'fa-solid fa-times' : 'fa-solid fa-bars';
 
@@ -16,4 +16,4 @@ const Menu = ({ onClick, closeIconVisible }: MenuProps) => {
   );
 };
 
-export default Menu;
+export default MenuIcon;

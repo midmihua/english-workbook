@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { PAGES } from '../../../constants';
-import CommonLink from '../../shared/link/commonLink';
+import CommonLink from '../../shared/link/baseLink';
 
 type NavProps = {
   visible?: boolean;

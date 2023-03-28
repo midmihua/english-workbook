@@ -1,10 +1,11 @@
-import CommonLink from '../../shared/link/commonLink';
+import BookReaderIcon from '../../shared/icons/bookReader';
+import CommonLink from '../../shared/link/baseLink';
 
 const Logo = () => {
 
   return (
     <CommonLink classes="logo">
-      <i className="fa-solid fa-book-open-reader"></i> e.w.
+      <BookReaderIcon /> e.w.
     </CommonLink >
   );
 };

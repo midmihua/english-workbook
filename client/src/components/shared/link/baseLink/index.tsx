@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PAGES } from '../../../../constants';
 
-type CommonLinkProps = {
+type BaseLinkProps = {
   path?: string,
   label?: string,
   classes?: string,
   children?: React.ReactNode;
 };
 
-const CommonLink = ({ path = PAGES.HOME.url, label, classes, children }: CommonLinkProps) => {
+const BaseLink = ({ path = PAGES.HOME.url, label, classes, children }: BaseLinkProps) => {
   const ariaLabel = label ? label : `Go to ${path}`;
 
   return (
@@ -23,4 +23,4 @@ const CommonLink = ({ path = PAGES.HOME.url, label, classes, children }: CommonL
   );
 };
 
-export default CommonLink;
+export default BaseLink;

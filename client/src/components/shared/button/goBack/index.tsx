@@ -1,20 +1,20 @@
 import { useNavigate } from 'react-router-dom';
-import CommonButton from '../commonButton';
+import BaseButton from '../baseButton';
 
-const GoBack = () => {
+const GoBackButton = () => {
   const navigate = useNavigate();
 
   const goBackHandler = () => navigate(-1);
 
   return (
-    <CommonButton
+    <BaseButton
       label={`Go back button`}
       classes={`button`}
       onClick={goBackHandler}
     >
       {`Go back`}
-    </CommonButton>
+    </BaseButton>
   );
 };
 
-export default GoBack;
+export default GoBackButton;

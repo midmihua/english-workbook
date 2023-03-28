@@ -1,6 +1,6 @@
-import GoBack from '../../components/shared/button/goBack';
-import Bug from '../../components/shared/icons/bug';
-import GoHome from '../../components/shared/link/goHome';
+import GoBackButton from '../../components/shared/button/goBack';
+import BugIcon from '../../components/shared/icons/bug';
+import GoHomeLink from '../../components/shared/link/goHome';
 import PageTitle from '../../components/shared/pageTitle';
 import { PAGES } from '../../constants';
 
@@ -11,14 +11,14 @@ const Error = () => {
   return (
     <section className='errorPage'>
       <PageTitle
-        Icon={Bug}
+        Icon={BugIcon}
         title={PAGES.ERROR.name}
       />
       <h3>{title}</h3>
       <p>{content}</p>
       <div className='btns-container'>
-        <GoBack />
-        <GoHome />
+        <GoBackButton />
+        <GoHomeLink />
       </div>
     </section >
   );

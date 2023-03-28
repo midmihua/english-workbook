@@ -1,11 +1,12 @@
-type CommonButtonProps = {
+type BaseButtonProps = {
   label?: string,
   classes?: string,
   children?: string;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-const CommonButton = ({ label, classes, children, onClick }: CommonButtonProps) => {
+const BaseButton = ({ label, classes, children, onClick }: BaseButtonProps) => {
+
   return (
     <button
       aria-label={label}
@@ -17,4 +18,4 @@ const CommonButton = ({ label, classes, children, onClick }: CommonButtonProps) 
   );
 };
 
-export default CommonButton;
+export default BaseButton;
