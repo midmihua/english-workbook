@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import LoginButton from '../../shared/button/login';
 import RegisterButton from '../../shared/button/register';
 import LoginIcon from '../../shared/icons/login';
@@ -11,7 +12,7 @@ type LoginFormProps = {
 };
 
 const LoginForm = ({ visible, onClick }: LoginFormProps) => {
-  const classes = visible ? "login-page active" : "login-page";
+  const classes = classNames('login-page', { 'active': visible });
 
   const stopPropagation = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();

@@ -1,5 +1,5 @@
 import SearchBlock from '../../components/searchBlock';
-import TermsList from '../../components/termsList';
+import TermsList from '../../features/terms/TermsList';
 
 const Vocabulary = () => {
 
