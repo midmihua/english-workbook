@@ -1,4 +1,4 @@
-import DefinitionCard from '../../components/shared/card/definition';
+import ShortDescriptionCard from '../../components/shared/cards/ShortDescription';
 
 export type TermItemProps = {
   term: string;
@@ -8,7 +8,7 @@ export type TermItemProps = {
 const TermItem = ({ term, description }: TermItemProps) => {
 
   return (
-    <DefinitionCard
+    <ShortDescriptionCard
       text={term}
       description={description}
     />

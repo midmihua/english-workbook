@@ -1,37 +1,37 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Main from '../components/layouts/main';
-import { PAGES } from '../constants';
-import Dashboard from '../pages/dashboard';
-import Error from '../pages/error';
-import Home from '../pages/home';
-import Practice from '../pages/practice';
-import Vocabulary from '../pages/vocabulary';
+import MainLayout from '../components/layouts/Main';
+import DashboardPage from '../pages/Dashboard';
+import ErrorPage from '../pages/Error';
+import HomePage from '../pages/Home';
+import PracticePage from '../pages/Practice';
+import VocabularyPage from '../pages/Vocabulary';
+import { PAGES } from '../shared/constants';
 
 export const router = createBrowserRouter([
   {
     path: PAGES.HOME.url,
-    element: <Main />,
-    errorElement: <Error />,
+    element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
-        element: <Home />,
-        errorElement: <Error />,
+        element: <HomePage />,
+        errorElement: <ErrorPage />,
       },
       {
         path: PAGES.DASHBOARD.url,
-        element: <Dashboard />,
-        errorElement: <Error />,
+        element: <DashboardPage />,
+        errorElement: <ErrorPage />,
       },
       {
         path: PAGES.VOCABULARY.url,
-        element: <Vocabulary />,
-        errorElement: <Error />,
+        element: <VocabularyPage />,
+        errorElement: <ErrorPage />,
       },
       {
         path: PAGES.PRACTICE.url,
-        element: <Practice />,
-        errorElement: <Error />,
+        element: <PracticePage />,
+        errorElement: <ErrorPage />,
       }
     ],
   }
