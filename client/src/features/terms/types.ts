@@ -30,4 +30,4 @@ export interface ITerm {
   id: string;
   word: string;
   results: Result[];
-};
+}
