@@ -5,7 +5,6 @@ type SearchInputProps = {
 };
 
 const SearchInput = ({ onChange }: SearchInputProps) => {
-
   return (
     <Input
       label={`Search input field`}

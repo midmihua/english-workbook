@@ -13,8 +13,24 @@ const getAllTerms = async (req: Request, res: Response) => {
   res.json(terms);
 };
 
+const getTermById = async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  if (!id) {
+    return res.status(400).json({ message: `'id' field is require` });
+  }
+
+  const term = await TermModel.findById(id).exec();
+
+  if (!term) {
+    return res.status(400).json({ message: 'Term not found' });
+  }
+
+  res.json(term);
+};
+
 const createNewTerm = async (req: Request, res: Response) => {
-  const { username, word, results } = req.body;
+  const { username, word, results, pronunciation, customProps } = req.body;
 
   if (!username || !word) {
     return res.status(400).json({ message: `'username' and 'word' fields are require` });
@@ -36,6 +52,8 @@ const createNewTerm = async (req: Request, res: Response) => {
     user: providedUser,
     word,
     results,
+    pronunciation,
+    customProps,
   };
 
   const term = await TermModel.create(termObject);
@@ -48,10 +66,12 @@ const createNewTerm = async (req: Request, res: Response) => {
 };
 
 const updateTerm = async (req: Request, res: Response) => {
-  const { id, username, word, results } = req.body;
+  const { id, username, word, results, pronunciation, customProps } = req.body;
 
   if (!id || !username || !word) {
-    return res.status(400).json({ message: `'id', 'username' and 'word' fields are require` });
+    return res
+      .status(400)
+      .json({ message: `'id', 'username' and 'word' fields are require` });
   }
 
   const providedUser = await UserModel.findOne({ username }).lean().exec();
@@ -75,6 +95,8 @@ const updateTerm = async (req: Request, res: Response) => {
   term.user = providedUser._id;
   term.word = word;
   term.results = results;
+  term.pronunciation = pronunciation;
+  term.customProps = customProps;
 
   const updatedTerm = await term.save();
 
@@ -82,7 +104,7 @@ const updateTerm = async (req: Request, res: Response) => {
 };
 
 const deleteTerm = async (req: Request, res: Response) => {
-  const { id } = req.body;
+  const { id } = req.params;
 
   if (!id) {
     return res.status(400).json({ message: 'Term ID required' });
@@ -102,6 +124,7 @@ const deleteTerm = async (req: Request, res: Response) => {
 
 export const termController = {
   getAllTerms,
+  getTermById,
   createNewTerm,
   updateTerm,
   deleteTerm,

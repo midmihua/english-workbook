@@ -1,18 +1,21 @@
-import ShortDescriptionCard from '../../components/shared/cards/ShortDescription';
+import { useParams } from 'react-router-dom';
+import { useAppSelector } from '../../app';
+import FullDescriptionCard from '../../components/main/cards/FullDescription';
+import InfoNotification from '../../components/shared/titles/Info';
+import { selectTermById } from './termsSlice';
 
-export type TermItemProps = {
-  term: string;
-  description: string;
-};
+const TermItem = () => {
+  const { id } = useParams();
+  const term = useAppSelector((state) => selectTermById(state, id));
 
-const TermItem = ({ term, description }: TermItemProps) => {
+  let content;
 
-  return (
-    <ShortDescriptionCard
-      text={term}
-      description={description}
-    />
-  );
+  if (term) {
+    content = <FullDescriptionCard term={term} />;
+  } else {
+    content = <InfoNotification text={`No term found`} />;
+  }
+  return content;
 };
 
 export default TermItem;

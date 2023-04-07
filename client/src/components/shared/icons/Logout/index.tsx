@@ -3,14 +3,7 @@ type LogoutProps = {
 };
 
 const LogoutIcon = ({ onClick }: LogoutProps) => {
-
-  return (
-    <i
-      className="fa-solid fa-right-from-bracket"
-      id="logout"
-      onClick={onClick}
-    ></i>
-  );
+  return <i className="fa-solid fa-right-from-bracket" id="logout" onClick={onClick}></i>;
 };
 
 export default LogoutIcon;

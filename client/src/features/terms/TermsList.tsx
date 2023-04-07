@@ -1,4 +1,8 @@
-import TermItem from './TermItem';
+import SpinnerIcon from '../../components/shared/spinners/Spinner';
+import InfoNotification from '../../components/shared/titles/Info';
+import { FEATURES } from '../../shared/constants';
+import { buildErrorMessage } from '../api/helper';
+import TermsListItem from './TermsListItem';
 import { useGetTermsQuery } from './termsSlice';
 
 const TermsList = () => {
@@ -6,21 +10,32 @@ const TermsList = () => {
     data: terms = [],
     isLoading,
     isSuccess,
-  } = useGetTermsQuery();
+    isError,
+    error,
+  } = useGetTermsQuery(undefined, {
+    pollingInterval: FEATURES.TERMS.POLLING_INTERVAL,
+    refetchOnFocus: true,
+    refetchOnMountOrArgChange: true,
+  });
 
-  const content = (
-    <div className="cards-list">
-      {
-        terms.map(({ id, word, results }) => (
-          <TermItem
-            key={id}
-            term={word}
-            description={results[0]?.definition}
-          />
-        ))
-      }
-    </div>
-  );
+  let content;
+
+  if (isLoading) {
+    content = <SpinnerIcon />;
+  } else if (isSuccess) {
+    content = (
+      <div className="cards-list">
+        {terms.map(({ id }) => (
+          <TermsListItem id={id} key={id} />
+        ))}
+      </div>
+    );
+  } else if (isError) {
+    const errMessage = buildErrorMessage(error);
+    content = <InfoNotification text={errMessage} />;
+  } else {
+    content = <InfoNotification text={`No terms found`} />;
+  }
 
   return content;
 };

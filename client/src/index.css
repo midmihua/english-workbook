@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,200;0,300;0,500;0,700;1,200;1,300;1,500;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100&family=Sen:wght@400;700;800&display=swap');
 
 :root {
-  --light: #F1F6F9;
+  --light: #f1f6f9;
   --light-blue: #d7e8f2c4;
-  --light-gray: #9BA4B4;
+  --light-gray: #9ba4b4;
   --white: #fff;
   --gray: #394867;
   --dark: #14274e;
-  --success: #1F8A70;
+  --success: #1f8a70;
 
   --z-idx-10: 10;
   --z-idx-20: 20;
@@ -19,7 +19,7 @@
   --box-shadow-dark-2: 0 0 1rem rgb(20, 39, 78, 0.2);
   --box-shadow-dark-3: 0 0 1rem rgb(20, 39, 78, 0.3);
 
-  --background-transparent: rgb(20, 39, 78, .9);
+  --background-transparent: rgb(20, 39, 78, 0.9);
 
   /* toast customizations */
   --toastify-color-success: var(--success);
@@ -34,7 +34,7 @@
   text-transform: none;
   outline: none;
   border: none;
-  transition: all .2s linear;
+  transition: all 0.2s linear;
   color: var(--light);
 }
 
@@ -62,7 +62,7 @@ header {
   font-size: 2.8rem;
   font-weight: bolder;
   text-transform: uppercase;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
 .logo i {
@@ -71,10 +71,10 @@ header {
 
 .navbar-link {
   font-size: 1.8rem;
-  padding: .5rem 1rem;
-  margin-left: .5rem;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
   font-weight: 600;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   text-transform: capitalize;
 }
 
@@ -92,7 +92,7 @@ header {
   background-color: var(--gray);
   border-radius: 50%;
   text-align: center;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   cursor: pointer;
 }
 
@@ -133,7 +133,209 @@ footer {
 footer i,
 footer h4 {
   font-size: 1.4rem;
-  padding: 0 .3rem;
+  padding: 0 0.3rem;
+}
+
+label {
+  color: var(--light-gray);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+input {
+  color: var(--gray);
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+}
+
+/* ============ common resources ============= */
+
+.input-container {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-title h2 {
+  color: var(--gray);
+  text-transform: capitalize;
+}
+
+.page-title i {
+  color: var(--gray);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.info-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 10rem 0;
+}
+
+.info-title h2 {
+  color: var(--gray);
+  font-size: 2.6rem;
+}
+
+.info-title i {
+  color: var(--light-gray);
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+.button {
+  background-color: var(--light-gray);
+  color: var(--light);
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.btns-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.Toastify__toast-body {
+  font-size: 1.8rem;
+}
+
+.actions-panel {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.1rem solid var(--white);
+}
+
+.actions-panel i {
+  color: var(--light-gray);
+  cursor: pointer;
+  font-size: 2.5rem;
+}
+
+.actions-panel i:hover {
+  display: flex;
+  color: var(--gray);
+}
+
+.actions-panel-left {
+  display: flex;
+  align-items: center;
+}
+
+.actions-panel-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ============ Spinner ============= */
+
+.lds-spinner-position {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: var(--z-idx-50);
+}
+
+.lds-spinner {
+  color: var(--light-gray);
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: var(--light-gray);
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* ============ login page ============= */
@@ -170,7 +372,7 @@ footer h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: .7rem;
+  gap: 0.7rem;
 }
 
 .login-page .wrapper .title h2 {
@@ -187,8 +389,8 @@ footer h4 {
 .login-page .wrapper input {
   color: var(--gray);
   font-size: 2rem;
-  padding: .5rem 1rem;
-  border-radius: .3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
   background-color: var(--light);
 }
 
@@ -203,14 +405,14 @@ footer h4 {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  gap: .7rem;
+  gap: 0.7rem;
 }
 
 .login-page .wrapper .btns-container .btn {
   color: var(--light-gray);
   background-color: var(--dark);
   padding: 1rem 2rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   font-size: 2rem;
   text-transform: capitalize;
   font-weight: 600;
@@ -219,41 +421,7 @@ footer h4 {
 
 .login-page .wrapper .btns-container .btn:hover {
   color: var(--white);
-  filter: brightness(.8);
-}
-
-/* ============ common resources ============= */
-
-.page-title {
-  display: flex;
-  align-items: center;
-  gap: .5rem;
-}
-
-.page-title h2 {
-  color: var(--gray);
-  text-transform: capitalize;
-}
-
-.page-title i {
-  color: var(--gray);
-  font-size: 2rem;
-  text-align: center;
-}
-
-.button {
-  background-color: var(--light-gray);
-  color: var(--light);
-  font-size: 1.4rem;
-  padding: .5rem 1rem;
-  font-weight: 700;
-  border-radius: .5rem;
-  text-transform: uppercase;
-}
-
-.button:hover {
-  background-color: var(--gray);
-  color: var(--white);
+  filter: brightness(0.8);
 }
 
 /* =========== vocabulary ============== */
@@ -267,8 +435,8 @@ footer h4 {
   color: var(--dark);
   font-size: 1.8rem;
   width: 30rem;
-  padding: .5rem 0;
-  border-bottom: .1rem solid var(--light-gray);
+  padding: 0.5rem 0;
+  border-bottom: 0.1rem solid var(--light-gray);
   background: none;
   text-transform: none;
 }
@@ -309,7 +477,7 @@ footer h4 {
   color: var(--gray);
   font-size: 2.2rem;
   margin-bottom: 1rem;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   text-transform: capitalize;
 }
 
@@ -322,7 +490,7 @@ footer h4 {
   color: var(--light-gray);
   text-transform: capitalize;
   font-weight: 700;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   margin-right: 0.5rem;
 }
 
@@ -332,6 +500,13 @@ footer h4 {
 
 .card:nth-child(even) {
   background-color: var(--light-blue);
+}
+
+.card-outer-container {
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .card-content {
@@ -346,7 +521,7 @@ footer h4 {
   color: var(--gray);
   font-size: 2.2rem;
   margin-bottom: 2rem;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   text-transform: capitalize;
 }
 
@@ -354,7 +529,7 @@ footer h4 {
   text-align: center;
 }
 
-.card-container {
+.card-inner-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -378,11 +553,11 @@ footer h4 {
   background-color: var(--light-gray);
   box-shadow: var(--box-shadow-dark-3);
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   text-transform: capitalize;
   text-align: center;
   font-weight: 700;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   min-width: 13rem;
 }
 
@@ -391,7 +566,7 @@ footer h4 {
   font-weight: 500;
   text-transform: capitalize;
   text-decoration: underline;
-  text-underline-offset: .4rem;
+  text-underline-offset: 0.4rem;
 }
 
 .phrase-example ol {
@@ -408,14 +583,15 @@ footer h4 {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  padding: 1.5rem;
 }
 
 .property {
   flex-basis: 30%;
   min-width: 28rem;
-  border: .2rem solid var(--light-blue);
-  border-radius: .5rem;
-  padding: .5rem;
+  border: 0.2rem solid var(--light-blue);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
   flex: 1;
 }
 
@@ -424,27 +600,43 @@ footer h4 {
   font-weight: 500;
   text-transform: capitalize;
   background-color: var(--light-blue);
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   display: inline-block;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
+}
+
+.property p {
+  margin: 0.5rem 0.5rem;
 }
 
 /* ======= errorPage ======= */
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
 .errorPage h3 {
   color: var(--gray);
   text-align: center;
-  margin: 2rem;
 }
 
-.errorPage .btns-container {
+/* ======= Edit Term Form ======= */
+.edit-form {
   display: flex;
-  justify-content: center;
-  margin: 3rem;
+  flex-direction: column;
   gap: 2rem;
+  width: 100%;
 }
 
-.Toastify__toast-body {
-  font-size: 1.8rem;
+.edit-form-input {
+  border-radius: 0.5rem;
+  border: 0.1rem solid var(--light-blue);
+}
+
+.edit-form-input:focus,
+.edit-form-input:hover {
+  box-shadow: var(--box-shadow-dark-2);
 }
 
 /* ======= media queries ======= */
@@ -458,7 +650,6 @@ footer h4 {
 */
 
 @media (max-width: 992px) {
-
   html {
     font-size: 55%;
   }
@@ -469,7 +660,6 @@ footer h4 {
 }
 
 @media (max-width: 768px) {
-
   html {
     font-size: 50%;
   }
@@ -488,8 +678,8 @@ footer h4 {
     left: 0;
     right: 0;
     background: var(--dark);
-    border-top: .1rem solid var(--light);
-    border-bottom: .1rem solid var(--light);
+    border-top: 0.1rem solid var(--light);
+    border-bottom: 0.1rem solid var(--light);
     padding: 1rem;
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
@@ -519,17 +709,24 @@ footer h4 {
     flex-direction: column;
   }
 
-  .errorPage h3 {
-    margin: 1.5rem;
+  .phrase-properties {
+    padding: 1rem;
   }
 
   .Toastify__toast-body {
     font-size: 2rem;
   }
+
+  .errorPage {
+    gap: 3.5rem;
+  }
+
+  .card-outer-container {
+    gap: 3rem;
+  }
 }
 
 @media (max-width: 480px) {
-
   footer {
     display: none;
   }
@@ -538,18 +735,22 @@ footer h4 {
     display: none;
   }
 
+  .info-title h2,
+  i {
+    font-size: 2.2rem;
+  }
+
   .top-block .search {
     width: 100%;
     text-align: center;
   }
 
-  .errorPage h3 {
-    margin: 1rem;
+  .phrase-properties {
+    padding: 0.5rem;
   }
 }
 
 @media (max-width: 320px) {
-
   .top-block .search label i {
     display: none;
   }

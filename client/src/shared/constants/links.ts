@@ -1,22 +1,28 @@
 export const PAGES = {
   HOME: {
     name: 'Home',
-    url: '/'
+    url: '/',
   },
   DASHBOARD: {
     name: 'Dashboard',
-    url: 'dashboard'
+    url: 'dashboard',
   },
   VOCABULARY: {
     name: 'Vocabulary',
-    url: 'vocabulary'
+    url: 'vocabulary',
+    TERM: {
+      get: ':id',
+      create: 'create',
+      edit: 'edit',
+      delete: 'delete',
+    },
   },
   PRACTICE: {
     name: 'Practice',
-    url: 'practice'
+    url: 'practice',
   },
   ERROR: {
     name: 'Error Page',
-    url: 'error'
-  }
+    url: 'error',
+  },
 };

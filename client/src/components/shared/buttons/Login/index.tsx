@@ -7,14 +7,10 @@ type LoginProps = {
 };
 
 const LoginButton = ({ classes, onClick }: LoginProps) => {
-  const cls = classNames(classes, { 'btn': !classes });
+  const cls = classNames(classes, { btn: !classes });
 
   return (
-    <Button
-      label={`Login button`}
-      classes={cls}
-      onClick={onClick}
-    >
+    <Button label={`Login button`} classes={cls} onClick={onClick}>
       {`Login`}
     </Button>
   );

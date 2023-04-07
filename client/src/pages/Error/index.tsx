@@ -1,26 +1,21 @@
 import GoBackButton from '../../components/shared/buttons/GoBack';
-import BugIcon from '../../components/shared/icons/Bug';
 import GoHomeLink from '../../components/shared/links/GoHome';
-import PageTitle from '../../components/shared/titles/PageTitle';
-import { PAGES } from '../../shared/constants';
+import ErrorPageTitle from '../../components/shared/titles/ErrorPage';
 
 const ErrorPage = () => {
   const title = `Uh no! We've got a problem.`;
   const content = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sunt ipsam neque dicta eaque, doloremque totam. Magni aut reprehenderit quidem. Recusandae esse blanditiis doloribus voluptas voluptatibus quos architecto similique suscipit cupiditate dolor hic laudantium amet consequuntur odit neque ipsa voluptate fugiat, eos perspiciatis eaque ut optio molestiae obcaecati quo! Dolore soluta quos nobis inventore molestias, exercitationem eos? Soluta quod non voluptatibus, praesentium vel dicta neque, perferendis voluptates beatae earum corporis impedit cum, esse animi! Enim dolores atque sint officiis voluptates perferendis amet unde, aliquid ea facere quam laboriosam impedit dicta veritatis aspernatur velit tenetur sit distinctio pariatur quis illum inventore?`;
 
   return (
-    <section className='errorPage'>
-      <PageTitle
-        Icon={BugIcon}
-        title={PAGES.ERROR.name}
-      />
+    <section className="errorPage">
+      <ErrorPageTitle />
       <h3>{title}</h3>
       <p>{content}</p>
-      <div className='btns-container'>
+      <div className="btns-container">
         <GoBackButton />
         <GoHomeLink />
       </div>
-    </section >
+    </section>
   );
 };
 

@@ -8,7 +8,11 @@ termRoutes
   .route(ROUTES.BASE)
   .get(termController.getAllTerms)
   .post(termController.createNewTerm)
-  .patch(termController.updateTerm)
+  .patch(termController.updateTerm);
+
+termRoutes
+  .route(`${ROUTES.BASE}${ROUTES.TERMS.ID}`)
+  .get(termController.getTermById)
   .delete(termController.deleteTerm);
 
 export { termRoutes };

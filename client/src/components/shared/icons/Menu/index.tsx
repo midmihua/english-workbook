@@ -4,16 +4,9 @@ type MenuProps = {
 };
 
 const MenuIcon = ({ onClick, closeIconVisible }: MenuProps) => {
-
   const classes = closeIconVisible ? 'fa-solid fa-times' : 'fa-solid fa-bars';
 
-  return (
-    <i
-      className={classes}
-      id="menu-bars"
-      onClick={onClick}
-    ></i>
-  );
+  return <i className={classes} id="menu-bars" onClick={onClick}></i>;
 };
 
 export default MenuIcon;

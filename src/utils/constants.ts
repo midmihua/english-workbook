@@ -21,6 +21,12 @@ export const ROLES = {
 export const ROUTES = {
   ALL: '*',
   BASE: '/',
-  USERS: '/users',
-  TERMS: '/terms',
+  USERS: {
+    BASE: '/users',
+    ID: ':id',
+  },
+  TERMS: {
+    BASE: '/terms',
+    ID: ':id',
+  },
 };

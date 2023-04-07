@@ -1,10 +1,9 @@
 import classNames from 'classnames';
 import LoginButton from '../../shared/buttons/Login';
 import RegisterButton from '../../shared/buttons/Register';
-import LoginIcon from '../../shared/icons/Login';
 import PasswordInput from '../../shared/inputs/Password';
 import UsernameInput from '../../shared/inputs/Username';
-import PageTitle from '../../shared/titles/PageTitle';
+import LoginFormTitle from '../../shared/titles/LoginForm';
 
 type LoginFormProps = {
   visible?: boolean;
@@ -12,32 +11,25 @@ type LoginFormProps = {
 };
 
 const LoginForm = ({ visible, onClick }: LoginFormProps) => {
-  const classes = classNames('login-page', { 'active': visible });
+  const classes = classNames('login-page', { active: visible });
 
   const stopPropagation = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
   };
 
   return (
-    <form className={classes} autoComplete='off' onClick={onClick}>
+    <form className={classes} autoComplete="off" onClick={onClick}>
       <div className="wrapper" onClick={stopPropagation}>
-
-        <PageTitle
-          Icon={LoginIcon}
-          title={`login form`}
-          classes={'title'}
-        />
-
+        <LoginFormTitle />
         <UsernameInput />
         <PasswordInput />
 
         <div className="btns-container">
-          <LoginButton onClick={() => { }} />
-          <RegisterButton onClick={() => { }} />
+          <LoginButton onClick={() => ({})} />
+          <RegisterButton onClick={() => ({})} />
         </div>
-
       </div>
-    </form >
+    </form>
   );
 };
 
