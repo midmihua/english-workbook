@@ -7,14 +7,10 @@ type RegisterProps = {
 };
 
 const RegisterButton = ({ classes, onClick }: RegisterProps) => {
-  const cls = classNames(classes, { 'btn': !classes });
+  const cls = classNames(classes, { btn: !classes });
 
   return (
-    <Button
-      label={`Register button`}
-      classes={cls}
-      onClick={onClick}
-    >
+    <Button label={`Register button`} classes={cls} onClick={onClick}>
       {`Register`}
     </Button>
   );

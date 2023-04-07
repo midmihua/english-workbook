@@ -5,7 +5,6 @@ type UsernameInputProps = {
 };
 
 const UsernameInput = ({ onChange }: UsernameInputProps) => {
-
   return (
     <Input
       label={`Username input field`}

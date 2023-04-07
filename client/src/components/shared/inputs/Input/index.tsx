@@ -1,3 +1,4 @@
+import { BASIC_INPUT } from '../../../../shared/constants/ui';
 import { InputType } from '../../../../shared/types';
 
 type InputProps = {
@@ -7,12 +8,22 @@ type InputProps = {
   value?: string;
   type?: InputType;
   placeholder?: string;
-  checked?: boolean;
-  onChange?: () => void;
+  size?: number;
+  classes?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input = ({ label, id, name, value, type, placeholder, checked, onChange }: InputProps) => {
-
+const Input = ({
+  label,
+  id,
+  name,
+  value,
+  type = BASIC_INPUT.TYPE as InputType,
+  placeholder,
+  size = BASIC_INPUT.SIZE,
+  classes,
+  onChange,
+}: InputProps) => {
   return (
     <input
       aria-label={label}
@@ -21,8 +32,9 @@ const Input = ({ label, id, name, value, type, placeholder, checked, onChange }:
       placeholder={placeholder}
       type={type}
       value={value}
+      size={size}
+      className={classes}
       onChange={onChange}
-      checked={checked}
     />
   );
 };

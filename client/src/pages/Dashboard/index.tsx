@@ -1,15 +1,9 @@
-import ChartLineIcon from '../../components/shared/icons/ChartLine';
-import PageTitle from '../../components/shared/titles/PageTitle';
-import { PAGES } from '../../shared/constants';
+import DashboardPageTitle from '../../components/shared/titles/DashboardPage';
 
 const DashboardPage = () => {
-
   return (
     <section className="dashboard" id="dashboard">
-      <PageTitle
-        Icon={ChartLineIcon}
-        title={PAGES.DASHBOARD.name}
-      />
+      <DashboardPageTitle />
     </section>
   );
 };

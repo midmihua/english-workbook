@@ -5,7 +5,6 @@ type PasswordInputProps = {
 };
 
 const PasswordInput = ({ onChange }: PasswordInputProps) => {
-
   return (
     <Input
       label={`Password input field`}

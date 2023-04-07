@@ -1,56 +1,88 @@
-import { FETCH_TERM_ITEMS_LIMIT } from '../../shared/constants';
+import { createSelector } from '@reduxjs/toolkit';
+import { FEATURES } from '../../shared/constants';
 import { apiSlice, TAGS } from '../api/apiSlice';
 import { ITerm } from './types';
 
-const SOURCE_NAME = 'terms';
+// TBD
+// const termsAdapter = createEntityAdapter<ITerm>({});
+// const initialState = termsAdapter.getInitialState();
 
-export const extendedApiSlice = apiSlice.injectEndpoints({
+export const termsApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-
     getTerms: builder.query<ITerm[], number | void>({
-      query: (limit = FETCH_TERM_ITEMS_LIMIT) => ({
-        url: `/${SOURCE_NAME}`,
+      query: (limit = FEATURES.TERMS.FETCH_LIMIT) => ({
+        url: `/terms`,
         params: {
-          _limit: limit
-        }
+          _limit: limit,
+        },
       }),
+      transformResponse: (responseData: [ITerm & { _id: string }]) => {
+        const loadedTerms = responseData?.map((term) => {
+          term.id = term._id;
+          return term;
+        });
+        return loadedTerms;
+      },
       providesTags: (result = [], error, arg) => [
         TAGS.TERM,
-        ...result.map(({ id }) => ({ type: TAGS.TERM, id }))
-      ]
+        ...result.map(({ id }) => ({ type: TAGS.TERM, id })),
+      ],
+      keepUnusedDataFor: FEATURES.TERMS.KEEP_UNUSED_DATA_FOR,
     }),
 
-    getTerm: builder.query<ITerm, undefined>({
-      query: (id) => ({
-        url: `/${SOURCE_NAME}/${id}`,
+    getTerm: builder.query<ITerm, { id: string }>({
+      query: ({ id }) => ({
+        url: `/terms/${id}`,
       }),
-      providesTags: (result, error, arg) => [{ type: TAGS.TERM, id: arg }]
+      providesTags: (result, error, arg) => [{ type: TAGS.TERM, id: arg.id }],
+      keepUnusedDataFor: FEATURES.TERMS.KEEP_UNUSED_DATA_FOR,
     }),
 
     addNewTerm: builder.mutation<ITerm, ITerm>({
       query: (term) => ({
-        url: `/${SOURCE_NAME}`,
+        url: `/terms`,
         method: 'POST',
         body: term,
       }),
-      invalidatesTags: [TAGS.TERM]
+      invalidatesTags: [TAGS.TERM],
     }),
 
-    editTerm: builder.mutation<ITerm, ITerm>({
+    updateTerm: builder.mutation<ITerm, ITerm>({
       query: (term) => ({
-        url: `/${SOURCE_NAME}/${term.id}`,
+        url: `/terms`,
         method: 'PATCH',
-        body: term
+        body: term,
       }),
-      invalidatesTags: (result, error, arg) => [{ type: TAGS.TERM, id: arg.id }]
+      invalidatesTags: (result, error, arg) => [{ type: TAGS.TERM, id: arg.id }],
     }),
 
-  })
+    deleteTerm: builder.mutation<ITerm, { id: string }>({
+      query: ({ id }) => ({
+        url: `/terms/${id}`,
+        method: 'DELETE',
+      }),
+      invalidatesTags: (result, error, arg) => [{ type: TAGS.TERM, id: arg.id }],
+    }),
+  }),
 });
 
 export const {
-  useAddNewTermMutation,
-  useEditTermMutation,
   useGetTermQuery,
   useGetTermsQuery,
-} = extendedApiSlice;
+  useAddNewTermMutation,
+  useUpdateTermMutation,
+  useDeleteTermMutation,
+} = termsApiSlice;
+
+// Selectors
+const selectTermsResult = termsApiSlice.endpoints.getTerms.select();
+
+export const selectAllTerms = createSelector(
+  selectTermsResult,
+  (allTermsResult) => allTermsResult.data ?? [],
+);
+
+export const selectTermById = createSelector(
+  [selectAllTerms, (state, id) => id],
+  (terms, id) => terms.find((term) => String(term.id) === String(id)),
+);

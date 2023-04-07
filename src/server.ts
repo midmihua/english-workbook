@@ -31,8 +31,8 @@ app.use(cookieParser());
 
 app.use(ROUTES.BASE, express.static(path.join(__dirname, '..', 'public')));
 app.use(ROUTES.BASE, rootRouter);
-app.use(ROUTES.USERS, userRoutes);
-app.use(ROUTES.TERMS, termRoutes);
+app.use(ROUTES.USERS.BASE, userRoutes);
+app.use(ROUTES.TERMS.BASE, termRoutes);
 app.all(ROUTES.ALL, notFoundRouter);
 
 app.use(errorHandler);
