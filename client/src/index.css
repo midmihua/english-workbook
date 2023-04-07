@@ -358,20 +358,6 @@ input {
   text-indent: 4rem;
 }
 
-.card-info {
-  background-color: var(--light);
-  border-radius: 1rem;
-  box-shadow: var(--box-shadow-dark-2);
-  padding: 1rem;
-  justify-content: center;
-  cursor: default;
-}
-
-.card-info p {
-  text-align: center;
-  font-size: 2.2rem;
-}
-
 /* ============ login page ============= */
 
 .login-page {
@@ -641,6 +627,20 @@ input {
 
 .property p {
   margin: 0.5rem 0.5rem;
+}
+
+.card-info {
+  background-color: var(--light);
+  border-radius: 1rem;
+  box-shadow: var(--box-shadow-dark-2);
+  padding: 1rem;
+  justify-content: center;
+  cursor: default;
+}
+
+.card-info p {
+  text-align: center;
+  font-size: 2.2rem;
 }
 
 /* ======= errorPage ======= */
