@@ -21,12 +21,20 @@ export const ROLES = {
 export const ROUTES = {
   ALL: '*',
   BASE: '/',
+  AUTH: {
+    BASE: '/',
+    AUTH_URI: '/auth',
+    REFRESH: '/refresh',
+    LOGOUT: '/logout',
+  },
   USERS: {
-    BASE: '/users',
-    ID: ':id',
+    BASE: '/',
+    USERS_URI: '/users',
+    ID: '/:id',
   },
   TERMS: {
-    BASE: '/terms',
-    ID: ':id',
+    BASE: '/',
+    TERMS_URI: '/terms',
+    ID: '/:id',
   },
 };
