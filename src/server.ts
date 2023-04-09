@@ -8,6 +8,7 @@ import { corsOptions } from './config/corsOptions.js';
 import { connectDB } from './config/dbConnect.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import { logEvents, logger } from './middleware/logger.js';
+import { authRoutes } from './routes/authRoutes.js';
 import { notFoundRouter } from './routes/notFound.js';
 import { rootRouter } from './routes/root.js';
 import { termRoutes } from './routes/termRoutes.js';
@@ -31,8 +32,9 @@ app.use(cookieParser());
 
 app.use(ROUTES.BASE, express.static(path.join(__dirname, '..', 'public')));
 app.use(ROUTES.BASE, rootRouter);
-app.use(ROUTES.USERS.BASE, userRoutes);
-app.use(ROUTES.TERMS.BASE, termRoutes);
+app.use(ROUTES.AUTH.AUTH_URI, authRoutes);
+app.use(ROUTES.USERS.USERS_URI, userRoutes);
+app.use(ROUTES.TERMS.TERMS_URI, termRoutes);
 app.all(ROUTES.ALL, notFoundRouter);
 
 app.use(errorHandler);
